@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="LearnSchool.Components.ServiceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearnSchool.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border Name="ServiceContainer" Margin="2" BorderThickness="1" BorderBrush="#777" Width="{Binding Width}">
+        <Grid Margin="1" Width="{Binding Width}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="256"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Grid.RowSpan="3" Height="192" Width="256" Source="{Binding Image}" MouseDown="ChangeImage"/>
+            <TextBox Grid.Column="1" Text="{Binding TITLE}" TextWrapping="WrapWithOverflow"/>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock FontSize="18" Text="{Binding BASEPRICE}" TextDecorations="Strikethrough"/>
+                <TextBox Text="{Binding PRICE}"/>
+            </StackPanel>
+            <TextBlock FontSize="16" Grid.Column="1" Grid.Row="2"  Text="{Binding DISCOUNT}"/>
+
+        </Grid>
+    </Border>
+</UserControl>
